@@ -16,3 +16,4 @@ There are no string values.
 Hugo suggested to first structure your time series into multiple windows (e.g. 12/3,23/4, etc.) and then use one of the two possibilities:
     1. Randomly select windows for training set and test set. This generalises better, but kind of look like data leakage to me.
     2. Select first x% for training and last (100-x)% for test.
+    
