@@ -3,13 +3,13 @@
 This repository contains the methodology and code for my research project made under supervision of Hugo Schyns.
 ## Content
 ### Data cleaning
-* What to do when companies change their TIC code, use CUSIP?
+* What to do when companies change their TIC code, use CUSIP?  
 Read up on the litterature about this subject. Hugo told me that many financial analysts/auditors use CUSIP.
-* Missing values:
+* Missing values?  
 Approach mentioned in the paper and also supported by Hugo:
     1. If possible, fill forward.
     2. If not possible, compute median from cross-section.
-* How do you handle string values, one-hot encoding?
+* How do you handle string values, one-hot encoding?  
 There are no string values.
 ### Data structuring
 * Training, validition and test sample: do this in a rolling window, but which kind is best (there are three main methods)?  
