@@ -1,4 +1,4 @@
-# Hugo_research
+# hugo_research
 ## Introduction
 This repository contains the methodology and code for my research project made under supervision of Hugo Schyns.
 ## Content
