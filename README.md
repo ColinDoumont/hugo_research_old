@@ -19,6 +19,26 @@ Hugo suggested to first structure your time series into multiple windows (e.g. 1
 
 ## Content
 ### 1. Selection
-FIXME: add info.
+* revenue (TTM) = revtq
+* cost of goods sold (TTM) = cogsq
+* selling, general & and admin expense (TTM) = xsgaq
+* net income (TTM) = niq
+* earnings before interest and taxes or EBIT (TTM): ebitq = revtq - xoprq - dpq 
+
+* cash and cash equivalents (MRQ) = used cheq for now <=> chechy <!---FIXME: this is yearly, not quarterly--->
+* receivables (MRQ) = rectq
+* inventories (MRQ) = invtq
+* other current assets (MRQ) = acoq
+* property plant and equipment (MRQ) = ppegtq
+* other assets (MRQ) = aoq
+* debt in current liabilities (MRQ) = dlcq
+* accounts payable (MRQ) = uaptq
+* taxes payable (MRQ) = txpq
+* other current liabilities (MRQ) = lcoq
+* total liabilities (MRQ) = ltq
+
+* price movement of the stock over the previous 1, 3, 6, and 9 months => compute manually
+
 ### 2. Preprocessing
+FIXME: add info.
 ### 3. Modeling
