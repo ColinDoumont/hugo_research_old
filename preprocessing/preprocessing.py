@@ -4,7 +4,7 @@ All functions follow a simple pattern:
     input = df
     output = transformed_df
 """
-
+import pandas as pd
 
 # Function to fill in missing values in a forward manner.
 def ffill(df, columns_list, id='cusip'):
@@ -71,7 +71,13 @@ def ttm(df, columns_list=['revtq', 'cogsq', 'xsgaq', 'niq', 'ebitq'], id='cusip'
     type(date) = str
     """
     df_ttm = df.copy()
-    columns_list.append('datadate')
-    columns_list.append('cusip')
-    df_ttm[columns_list] = df_ttm.groupby('cusip')[columns_list].rolling('365D', on='datadate', min_periods=4).sum().reset_index()[columns_list]
+    df_ttm_shuffled = df.copy()
+    columns_list_drop = columns_list.copy()
+    columns_list.append(date)
+    columns_list.append(id)
+
+    df_ttm = df_ttm.drop(columns_list_drop, axis=1)
+    df_ttm_shuffled = df_ttm_shuffled.groupby(id)[columns_list].rolling('365D', on=date, min_periods=4).sum().reset_index()[columns_list]
+    df_ttm = pd.merge(df_ttm, df_ttm_shuffled, how='inner', on=[id, date])
+
     return df_ttm
