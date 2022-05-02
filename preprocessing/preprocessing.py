@@ -37,7 +37,7 @@ def mfill(df, columns_list, date='datadate'):
 
 
 # Function to add lags in the dataframe.
-def lagged(df, columns_list, id='cusip', lags_list=[-5,-4,-3,-2,-1,1]):
+def lagged(df, columns_list, id='cusip', date='datadate', lags_list=[-5,-4,-3,-2,-1,1]):
     """
     type(df) = pandas DataFrame
     type(columns_list) = list
@@ -45,7 +45,7 @@ def lagged(df, columns_list, id='cusip', lags_list=[-5,-4,-3,-2,-1,1]):
     type (lags_list) = list
     """
     lags_list = [-i for i in lags_list]
-    df_lagged = df.copy()
+    df_lagged = df.copy().sort_values(by=date)  
     X_col_list = columns_list.copy()
     y_col_list = []
 
